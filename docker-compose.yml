@@ -1,0 +1,18 @@
+version: "3"
+services:
+  app:
+    image: phpfpm7-nginx:latest
+    volumes:
+      - ".:/usr/share/nginx/html"
+      - "./nginxfile/supervisord.conf:/etc/supervisord.conf"
+      - "./nginxfile/default.conf:/etc/nginx/conf.d/default.conf"
+      - "./start.sh:/start.sh"
+    ports:
+      - 8084:80
+    command: ["/start.sh"]
+    networks:
+      - local-net
+
+networks:
+  local-net:
+    external: true
