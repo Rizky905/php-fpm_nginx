@@ -9,3 +9,8 @@
 - docker network create name_network
 
 - using the network you can see in docker-compose.yml file
+
+## how to copy data into volumes 
+- docker container create --name dummy -v myvolume:/root hello-world
+- docker cp c:\myfolder\myfile.txt dummy:/root/myfile.txt
+- docker rm dummy

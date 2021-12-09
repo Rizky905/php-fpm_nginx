@@ -9,16 +9,16 @@ services:
     environment:
       MYSQL_ROOT_PASSWORD: "password"
     volumes:
-      - image-server_mysql-data:/var/lib/mysql
+      - mysql-data:/var/lib/mysql
     ports:
       - "3306:3306"
     networks:
       - local-net
 
 volumes:
-  image-server_mysql-data:
-    external: true
+  mysql-data:
 
+    null
 networks:
   local-net:
     external: true
